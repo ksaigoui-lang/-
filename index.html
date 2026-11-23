@@ -21,25 +21,41 @@ body{container-type:inline-size}
 .film-switch{position:absolute;bottom:16px;right:20px;width:44px;height:44px;border:1px solid #ffffffaa;border-radius:50%;background:#21191999;color:white;cursor:pointer;font:16px/1 sans-serif}
 .film-switch:focus-visible{outline:3px solid white;outline-offset:3px}
 #glass-scene{width:100cqw;margin-inline:calc(50% - 50cqw)}#glass-scene video{display:block;width:100%;object-position:center}</style><style>
+.hero figure img{object-position:50% 52%}
+.tel-link{color:var(--wine);border-bottom:1px solid var(--wine);padding-bottom:2px;font-family:Georgia,serif;letter-spacing:.04em}
+.tel-link:hover{color:#4d2b27;border-color:#4d2b27}
+.visit{gap:48px}
+.visit-actions{max-width:420px;width:100%;padding:34px 36px;border:1px solid var(--line);background:#f4f1ea}
+.visit-note{margin:0 0 18px;font-size:14px;line-height:1.9;color:#5b554b}
+.visit-actions .book{width:100%;text-align:center;margin-bottom:26px;font-size:15px;letter-spacing:.06em}
+.visit-ig{padding-top:22px;border-top:1px solid var(--line)}
+.visit-ig-label{font:italic 18px Georgia,serif;color:var(--wine);margin:0 0 8px}
+.visit-ig p:not(.visit-ig-label){margin:0 0 14px;font-size:14px;line-height:1.9;color:#5b554b}
+.foot-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.foot-meta a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:800px){.visit{gap:28px}.visit-actions{max-width:100%;padding:26px 24px}}
 .splash{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;background:#211717;transition:opacity .7s ease,visibility .7s}
 .splash.hide{opacity:0;visibility:hidden}
-.splash-bg{position:absolute;inset:0;background:url("amalfi.webp") center/cover no-repeat;animation:splashZoom 10s ease-out forwards}
-.splash-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,12,10,.38),rgba(20,12,10,.64))}
+html.splash-seen .splash{display:none}
+.splash-bg{position:absolute;inset:0;background:url("storefront.jpg") center/cover no-repeat;animation:splashZoom 10s ease-out forwards}
+.splash-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,12,10,.5),rgba(20,12,10,.76))}
 .splash-inner{position:relative;padding:24px;animation:splashUp 1.1s .25s ease both}
 .splash-kicker{font:13px Georgia,serif;letter-spacing:.5em;margin:0 0 12px}
 .splash-logo{font:clamp(44px,9vw,84px) Georgia,serif;letter-spacing:.18em;margin:0;line-height:1}
 .splash-copy{font-size:15px;line-height:2.1;margin:26px 0 34px}
 .splash-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 .splash-btn{font:15px/1 "Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;letter-spacing:.08em;padding:16px 30px;border:1px solid #fff;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.splash-btn:focus-visible{outline:3px solid #fff;outline-offset:4px}
 .splash-btn-ig{background:#fff;color:#302c26;text-decoration:none}
 .splash-btn-ig:hover{background:transparent;color:#fff}
 .splash-btn-site{background:transparent;color:#fff}
-.splash-btn-site:hover{background:#713b36;border-color:#713b36}
+.splash-btn-site:hover{background:var(--wine);border-color:var(--wine)}
 @keyframes splashZoom{from{transform:scale(1)}to{transform:scale(1.08)}}
 @keyframes splashUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 html.splash-open{overflow:hidden}
 @media(prefers-reduced-motion:reduce){.splash-bg,.splash-inner{animation:none}}
 </style>
+<script>try{if(sessionStorage.getItem('legato_splash'))document.documentElement.classList.add('splash-seen');}catch(e){}</script>
 <div class="splash" id="splash" role="dialog" aria-modal="true" aria-label="両国レガートへようこそ">
 <div class="splash-bg"></div>
 <div class="splash-inner">
@@ -52,13 +68,13 @@ html.splash-open{overflow:hidden}
 </div>
 </div>
 </div>
-<header><a class="logo" href="#top" lang="it">LEGATO<small>RYOGOKU</small></a><nav aria-label="主なメニュー"><a href="#menu">お料理</a><a href="#story">お店について</a></nav></header><main id="top">
-<section class="hero"><div class="lead"><div class="kicker" lang="it">Ryogoku Legato</div><h1>横丁の昼と、<br>レガートの夜。</h1><p>両国・横綱横丁の一軒家イタリアン。<br>昼はひと皿のパスタを、<br>夜は季節の前菜をワインとともに。</p></div><figure><img src="storefront.webp" alt="イタリア国旗と灯りのともった店先" fetchpriority="high"><figcaption><span>両国レガート</span><i>Ryogoku, Tokyo</i></figcaption></figure></section>
+<header><a class="logo" href="#top" lang="it">LEGATO<small>RYOGOKU</small></a><nav aria-label="主なメニュー"><a href="#menu">お料理</a><a href="#story">お店について</a><a href="#access">アクセス・ご予約</a></nav></header><main id="top">
+<section class="hero"><div class="lead"><div class="kicker" lang="it">Ryogoku Legato</div><h1>横丁の昼と、<br>レガートの夜。</h1><p>両国・横綱横丁の一軒家イタリアン。<br>昼はひと皿のパスタを、<br>夜は季節の前菜をワインとともに。</p></div><figure><img src="storefront.jpg" alt="イタリア国旗と灯りのともった店先" fetchpriority="high"><figcaption><span>両国レガート</span><i>Ryogoku, Tokyo</i></figcaption></figure></section>
 <nav class="chapters" aria-label="楽しみ方から選ぶ"><a href="#lunch">ランチ</a><a href="#dinner">ディナー</a></nav><section id="menu" class="section"><p class="kicker">La cucina</p><h2>昼と夜のお品書き</h2><div class="menus"><div id="lunch"><h3>Pranzo <span>昼のお食事</span></h3><dl><div class="item"><dt>平日のパスタランチ<b>¥1,400</b></dt><dd>サラダと自家製フォカッチャ付き。季節のパスタをお楽しみください。</dd></div><div class="item"><dt>ランチコース<b>¥4,500</b></dt><dd>パスタを二種類、肉料理、食後のデザートまで。ゆっくり過ごせる日の昼食に。</dd></div></dl></div><div id="dinner"><h3>Cena <span>夜のお食事</span></h3><dl><div class="item"><dt>おまかせ前菜盛り合わせ<b>¥1,800</b></dt><dd>季節の前菜で乾杯を。続くひと皿にはパスタやナポリスタイルのピッツァを。</dd></div><div class="item"><dt>季節のシェフおまかせコース<b>¥8,000</b></dt><dd>お祝いや会食に。</dd></div></dl></div></div><p class="fine">税込価格の一例です。内容は季節により変わります。夜の席のみのご利用には、席料・アミューズ代として小学生以上お一人400円を頂戴します。</p></section>
 <section class="section story" id="story"><figure><div class="wine-scene"><video id="wine-film" loop controls playsinline muted preload="none" poster="wine.webp" aria-label="グラスにワインを注ぐイメージ映像"><source src="wine.mp4" type="video/mp4"></video><button type="button" class="film-switch" aria-controls="wine-film" aria-label="映像を再生" hidden>▶</button></div><figcaption>ワインのイメージ映像</figcaption></figure><div><p class="kicker">La nostra storia</p><h2>両国で、二十余年。</h2><p class="prose">シェフの宮内洋が前身の「両国吉良亭」の厨房に立ったのは2002年。2022年、夫婦で営む「両国レガート」として新たに扉を開きました。</p><p class="prose">和歌山・七代目山利の釜揚げしらすに、地元・浅草開化楼のカラヒグ麺。食材を育てた土地にも興味を持っていただけたら。そんな思いで、産地の名をお品書きに添えています。</p></div></section>
 
-<div id="glass-scene"><div class="wine-scene"><video id="glass-film" loop controls playsinline muted preload="none" poster="amalfi.webp" aria-label="アマルフィ海岸と街並みのイメージ映像"><source src="amalfi.mp4" type="video/mp4"></video><button type="button" class="film-switch" aria-controls="glass-film" aria-label="映像を再生" hidden>▶</button></div></div><section class="visit"><div><p class="kicker">Accesso</p><h2>横綱横丁でお待ちしています。</h2><p>両国レガート<br>東京都墨田区両国3丁目23番8号</p><p>ランチ 11:30〜14:00（L.O.）<br>ディナー 18:00〜22:00<br>定休日 月曜日（日曜は月に二回ほど営業日あり）<br>ご予約 <a href="tel:0336345226">03-3634-5226</a></p><a class="jump" href="https://www.google.com/maps/search/?api=1&amp;query=両国レガート+墨田区両国3-23-8">Google マップで見る</a></div><div></div></section></main><footer><span class="footmark">RYOGOKU LEGATO</span><span>MachiyaWeb 制作見本</span></footer><script src="wine.js"></script>
+<div id="glass-scene"><div class="wine-scene"><video id="glass-film" loop controls playsinline muted preload="none" poster="amalfi.webp" aria-label="アマルフィ海岸と街並みのイメージ映像"><source src="amalfi.mp4" type="video/mp4"></video><button type="button" class="film-switch" aria-controls="glass-film" aria-label="映像を再生" hidden>▶</button></div></div><section class="visit" id="access"><div><p class="kicker">Accesso</p><h2>横綱横丁でお待ちしています。</h2><p>両国レガート<br>東京都墨田区両国3丁目23番8号</p><p>ランチ 11:30〜14:00（L.O.）<br>ディナー 18:00〜22:00<br>定休日 月曜日（日曜は月に二回ほど営業日あり）<br>ご予約 <a class="tel-link" href="tel:0336345226">03-3634-5226</a></p><a class="jump" href="https://www.google.com/maps/search/?api=1&amp;query=両国レガート+墨田区両国3-23-8">Google マップで見る</a></div><div class="visit-actions"><p class="visit-note">お席のご予約・貸切のご相談はお電話にて承ります。</p><a class="book" href="tel:0336345226">お電話でご予約　03-3634-5226</a><div class="visit-ig"><p class="visit-ig-label" lang="en">Instagram</p><p>季節の食材や日曜営業日など、日々のお知らせをお届けしています。</p><a class="jump" href="https://www.instagram.com/ryougokulegato/" target="_blank" rel="noopener">@ryougokulegato を見る</a></div></div></section></main><footer><span class="footmark">RYOGOKU LEGATO</span><span class="foot-meta"><a href="https://www.instagram.com/ryougokulegato/" target="_blank" rel="noopener">Instagram</a><span>MachiyaWeb 制作見本</span></span></footer><script src="wine.js"></script>
 <script>
-(function(){var s=document.getElementById('splash');if(!s)return;document.documentElement.classList.add('splash-open');document.getElementById('splash-enter').addEventListener('click',function(){s.classList.add('hide');document.documentElement.classList.remove('splash-open');setTimeout(function(){s.remove();},750);});})();
+(function(){var s=document.getElementById('splash');if(!s)return;if(document.documentElement.classList.contains('splash-seen')){s.remove();return;}document.documentElement.classList.add('splash-open');var closed=false;function closeSplash(){if(closed)return;closed=true;try{sessionStorage.setItem('legato_splash','1');}catch(e){}s.classList.add('hide');document.documentElement.classList.remove('splash-open');document.removeEventListener('keydown',onKey);setTimeout(function(){s.remove();},750);}function onKey(e){if(e.key==='Escape')closeSplash();}document.getElementById('splash-enter').addEventListener('click',closeSplash);document.addEventListener('keydown',onKey);})();
 </script>
 </html>
